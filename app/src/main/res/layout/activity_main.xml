@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="80px"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="214dp"
+        app:srcCompat="@drawable/briareus_logo_v2"
+        tools:srcCompat="@drawable/briareus_logo_v2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Briareus"
+        android:textAlignment="center"
+        android:textColor="?attr/actionMenuTextColor"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/angleInputTXT"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:ems="10"
+        android:hint="Angle input"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/setAngleBTN"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#009688"
+        android:enabled="true"
+        android:onClick="SetAllAngles_click"
+        android:text="Set all angles"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/outputLB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+</LinearLayout>
