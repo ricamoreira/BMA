@@ -10,11 +10,10 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="214dp"
-        app:srcCompat="@drawable/briareus_logo_v2"
-        tools:srcCompat="@drawable/briareus_logo_v2" />
+        android:layout_height="206dp"
+        app:srcCompat="@drawable/briareus_logo_bma" />
 
     <TextView
         android:id="@+id/textView"
@@ -26,6 +25,17 @@
         android:textSize="60sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/ConnectBTN"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#AFAFAF"
+        android:enabled="false"
+        android:onClick="ConnectToHC05"
+        android:text="Connect"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
     <EditText
         android:id="@+id/angleInputTXT"
         android:layout_width="match_parent"
@@ -33,15 +43,14 @@
         android:ems="10"
         android:hint="Angle input"
         android:inputType="number"
-        android:textColor="#000000"
         android:textSize="16sp" />
 
     <Button
         android:id="@+id/setAngleBTN"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:backgroundTint="#009688"
-        android:enabled="true"
+        android:backgroundTint="#AFAFAF"
+        android:enabled="false"
         android:onClick="SetAllAngles_click"
         android:text="Set all angles"
         android:textAlignment="center"
