@@ -53,7 +53,15 @@
                 android:hint="Angle input"
                 android:inputType="number"
                 android:maxLength="3"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/angleInputSLD"
+                android:layout_width="match_parent"
+                android:layout_height="70sp"
+                android:valueFrom="0"
+                android:valueTo="180" />
 
             <TextView
                 android:id="@+id/outputLB"

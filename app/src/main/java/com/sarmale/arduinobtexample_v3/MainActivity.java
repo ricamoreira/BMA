@@ -25,6 +25,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.material.slider.Slider;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Set;
@@ -128,6 +130,12 @@ public class MainActivity extends AppCompatActivity {
 
                 bluetoothSocket.close();
 
+                a[0] = 0;
+                a[1] = 0;
+                a[2] = 0;
+                a[3] = 0;
+                a[4] = 0;
+
                 setAngle.setEnabled(false);
                 setAngle.setBackgroundColor(Color.parseColor("#AFAFAF"));
                 Connect.setBackgroundColor(Color.parseColor("#009688"));
@@ -195,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                             Connect.setEnabled(true);
                             Connect.setBackgroundColor(Color.parseColor("#009688"));
                             Connect.setText("Connect");
-                            Toast.makeText(MainActivity.this, "Make sure the device is turned on", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Make sure the device is turned on, or if it is connected to other devices", Toast.LENGTH_SHORT).show();
                             //output.setText("Erro: " + e);
                         }
                     }
@@ -213,22 +221,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SetAllAngles_click(View view) {
-        EditText angleInput = findViewById(R.id.angleInputTXT);
+        //EditText angleInput = findViewById(R.id.angleInputTXT);
+        Slider angleInput = findViewById(R.id.angleInputSLD);
         Switch switch1 = findViewById(R.id.switch1);
         Switch switch2 = findViewById(R.id.switch2);
         Switch switch3 = findViewById(R.id.switch3);
         Switch switch4 = findViewById(R.id.switch4);
         Switch switch5 = findViewById(R.id.switch5);
 
-        if(angleInput.getText() != null){
-            if(Integer.parseInt(angleInput.getText().toString()) <= 180){
-                a[0] = (switch1.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[0];
-                a[1] = (switch2.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[1];
-                a[2] = (switch3.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[2];
-                a[3] = (switch4.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[3];
-                a[4] = (switch5.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[4];
-
+        if(angleInput.getValue() >= 0){
+            if(angleInput.getValue() <= 180){
                 try {
+                    /*a[0] = (switch1.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[0];
+                    a[1] = (switch2.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[1];
+                    a[2] = (switch3.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[2];
+                    a[3] = (switch4.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[3];
+                    a[4] = (switch5.isChecked()) ? Integer.parseInt(angleInput.getText().toString()) : a[4];*/
+
+                    a[0] = (switch1.isChecked()) ? (int) angleInput.getValue() : a[0];
+                    a[1] = (switch2.isChecked()) ? (int) angleInput.getValue() : a[1];
+                    a[2] = (switch3.isChecked()) ? (int) angleInput.getValue() : a[2];
+                    a[3] = (switch4.isChecked()) ? (int) angleInput.getValue() : a[3];
+                    a[4] = (switch5.isChecked()) ? (int) angleInput.getValue() : a[4];
+
                     if (bluetoothSocket != null && bluetoothSocket.isConnected()) {
 
                         OutputStream outputStream = bluetoothSocket.getOutputStream();
@@ -297,6 +312,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 bluetoothSocket.close();
+
+                a[0] = 0;
+                a[1] = 0;
+                a[2] = 0;
+                a[3] = 0;
+                a[4] = 0;
 
                 setAngle.setEnabled(false);
                 setAngle.setBackgroundColor(Color.parseColor("#AFAFAF"));
