@@ -5,63 +5,169 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="80px"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="206dp"
-        app:srcCompat="@drawable/briareus_logo_bma" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Briareus"
-        android:textAlignment="center"
-        android:textColor="?attr/actionMenuTextColor"
-        android:textSize="60sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="60px">
 
-    <Button
-        android:id="@+id/ConnectBTN"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="#AFAFAF"
-        android:enabled="false"
-        android:onClick="ConnectToHC05"
-        android:text="Connect"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="190sp"
+                app:srcCompat="@drawable/briareus_logo_bma" />
 
-    <EditText
-        android:id="@+id/angleInputTXT"
-        android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:ems="10"
-        android:hint="Angle input"
-        android:inputType="number"
-        android:textSize="16sp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Briareus"
+                android:textAlignment="center"
+                android:textColor="?attr/actionMenuTextColor"
+                android:textSize="60sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/setAngleBTN"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="#AFAFAF"
-        android:enabled="false"
-        android:onClick="SetAllAngles_click"
-        android:text="Set all angles"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+            <Button
+                android:id="@+id/ConnectBTN"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:backgroundTint="#009688"
+                android:enabled="true"
+                android:onClick="ConnectToHC05"
+                android:text="Connect"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/outputLB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+            <EditText
+                android:id="@+id/angleInputTXT"
+                android:layout_width="match_parent"
+                android:layout_height="70sp"
+                android:ems="10"
+                android:hint="Angle input"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/outputLB"
+                android:layout_width="match_parent"
+                android:layout_height="22sp"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/briareus_polegar" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="150sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/briareus_indicador" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/briareus_medio" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/briareus_anelar" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/briareus_mindinho" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="50dp" />
+
+                <Switch
+                    android:id="@+id/switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="50dp" />
+
+                <Switch
+                    android:id="@+id/switch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="50dp" />
+
+                <Switch
+                    android:id="@+id/switch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="50dp" />
+
+                <Switch
+                    android:id="@+id/switch5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="50dp" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switchAllFingers"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/label"
+                android:layout_gravity="center"
+                android:height="50sp"
+                android:onClick="onCheckedChanged"
+                android:text="All Fingers" />
+
+            <Button
+                android:id="@+id/setAngleBTN"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:backgroundTint="#AFAFAF"
+                android:enabled="false"
+                android:onClick="SetAllAngles_click"
+                android:text="Set all angles"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
